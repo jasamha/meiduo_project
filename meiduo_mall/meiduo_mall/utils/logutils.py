@@ -6,31 +6,34 @@
 """
 import logging
 
+from meiduo_mall.utils.exceptions import logger
+
 
 class Log(object):
     """
     自定义的log输出
     """
+    logger = logging.getLogger("jasamha")
     _self_sign = "zhang__"
 
     @classmethod
     def debug(cls, content):
-        logging.debug(cls._self_sign + repr(content))
+        logger.debug(cls._self_sign + repr(content))
 
     @classmethod
     def warning(cls, what="", content=None):
         if content is None:
-            logging.warning(cls._self_sign + what + "__")
+            logger.warning(cls._self_sign + what + "__")
         else:
-            logging.warning(cls._self_sign + what + "__" + repr(content))
+            logger.warning(cls._self_sign + what + "__" + repr(content))
 
     @classmethod
     def error(cls, what="", content=None):
         if content is None:
-            logging.error(cls._self_sign + what + "__")
+            logger.error(cls._self_sign + what + "__")
         else:
-            logging.error(cls._self_sign + what + "__" + repr(content))
+            logger.error(cls._self_sign + what + "__" + repr(content))
 
     @classmethod
     def info(cls, content):
-        logging.info(cls._self_sign + repr(content))
+        logger.info(cls._self_sign + repr(content))

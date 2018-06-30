@@ -22,3 +22,6 @@ push到远程并在远程创建dev分支:git push origin dev:dev
 * sys.path.insert(0,需要导入的路径)
 ### debug配置和release配置
 在父目录meiduo_mall中新建settings包,然后定义dev.py和release.py文件,把默认生成的settings拖到settings内容赋值到dev.py下,并在manage.py下修改配置
+### 在序列化器中要获取视图类中数据  格式：self.context['view'].kwargs['变量名']
+### redis管道技术
+Redis 管道技术可以在服务端未响应时,客户端可以继续向服务端发送请求，并最终一次性读取所有服务端的响应.  
